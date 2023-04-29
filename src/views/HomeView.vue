@@ -44,8 +44,10 @@ const diff = computed(() => {
       <p>Since <strong>2021</strong> I'm specializing in EVM smart contracts integrations - I've been using <strong>Ethers</strong>,<strong>Typechain</strong>, and <strong>The Graph</strong> daily to craft decentralized applications.</p>
       <p />
       <h3>Latest working experiences</h3>
-      <p>Beside my freelance works, I've done consultancy for some companies too:</p>
-      <h4>Ntropika Labs - Lead Software Developer [2021 - now]</h4>
+      <p>Beside my freelance works, I've done consultancy and worked for some companies too:</p>
+      <h4>Current: Peter Park - Senior Frontend Developer [2023 - now] </h4>
+      <p>Currently working on leading the migration from Vue 2 Javascript apps to Vue 3 Typescript apps, leveraging monorepository technologies like Turbo</p>
+      <h4>Ntropika Labs - Lead Software Developer [2021 - 2022]</h4>
       <p>
         Worked on delivering technical solutions for different projects
         built on the Ethereum ecosystem. Libs and frameworks used
