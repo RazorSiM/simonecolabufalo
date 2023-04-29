@@ -1,6 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxt/content", "@vueuse/nuxt", "@unocss/nuxt"],
+  modules: ["@nuxt/content", "@nuxtjs/robots", "@vueuse/nuxt", "@unocss/nuxt"],
   css: ["@unocss/reset/tailwind.css"],
   app: {
     head: {
@@ -49,4 +49,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  }
 });
