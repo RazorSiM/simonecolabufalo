@@ -8,7 +8,7 @@ import { presetScrollbar } from 'unocss-preset-scrollbar'
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetUno(),              
     presetIcons(),
     presetWebFonts({
       provider: 'google',
