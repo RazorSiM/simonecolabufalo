@@ -3,7 +3,7 @@ layout: default
 ---
 ## Who am I
 
-I'm a freelancer web designer & developer based in Italy. I've been active in the space for **9.33 years**.
+I'm a freelancer web designer & developer based in Italy. I've been active in the space for :Years years.
 
 ### What can I do for you
 

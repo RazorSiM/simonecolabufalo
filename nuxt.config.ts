@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: ["@nuxt/content", "@nuxtjs/robots", "@vueuse/nuxt", "@unocss/nuxt"],
   css: ["@unocss/reset/tailwind.css"],
+
   app: {
     head: {
       htmlAttrs: {
@@ -37,6 +38,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   content: {
     markdown: {
       tags: {
@@ -49,9 +51,12 @@ export default defineNuxtConfig({
       },
     },
   },
+
   nitro: {
     prerender: {
       routes: ['/sitemap.xml']
     }
-  }
+  },
+
+  compatibilityDate: "2024-07-21"
 });
