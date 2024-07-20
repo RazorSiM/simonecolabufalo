@@ -7,7 +7,7 @@ export const socialList = [
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/Razor_SiM',
+      url: 'https://x.com/razdotwtf',
       icon: 'i-carbon-logo-twitter',
     },
     {
