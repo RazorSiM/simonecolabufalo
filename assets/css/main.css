@@ -1,0 +1,112 @@
+:root {
+  color-scheme: light;
+  --color-paper: #eaf0f3;
+  --color-panel: rgb(247 250 252 / 78%);
+  --color-panel-solid: #f7fafc;
+  --color-ink: #101d32;
+  --color-copy: #3f5065;
+  --color-muted: #69798b;
+  --color-signal: #265cdd;
+  --color-flare: #f15a38;
+  --color-status: #2d9b6f;
+  --color-border: rgb(16 29 50 / 12%);
+  --color-border-strong: rgb(16 29 50 / 25%);
+  --color-grid: rgb(16 29 50 / 6%);
+  --color-shadow: rgb(38 92 221 / 14%);
+  --color-route-shadow: rgb(38 92 221 / 12%);
+  --header-background: rgb(234 240 243 / 86%);
+  --social-border: rgb(16 29 50 / 24%);
+  --social-color: #101d32;
+  --social-hover-background: #101d32;
+  --social-hover-color: #eaf0f3;
+}
+
+html.dark {
+  color-scheme: dark;
+  --color-paper: #0b1423;
+  --color-panel: rgb(17 30 50 / 82%);
+  --color-panel-solid: #111e32;
+  --color-ink: #edf3f7;
+  --color-copy: #b0bdca;
+  --color-muted: #8495a8;
+  --color-signal: #6d93ff;
+  --color-flare: #ff7555;
+  --color-status: #54c99a;
+  --color-border: rgb(237 243 247 / 10%);
+  --color-border-strong: rgb(237 243 247 / 22%);
+  --color-grid: rgb(237 243 247 / 5%);
+  --color-shadow: rgb(109 147 255 / 12%);
+  --color-route-shadow: rgb(109 147 255 / 13%);
+  --header-background: rgb(11 20 35 / 88%);
+  --social-border: rgb(237 243 247 / 24%);
+  --social-color: #edf3f7;
+  --social-hover-background: #edf3f7;
+  --social-hover-color: #0b1423;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-paper);
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-copy);
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-flare);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-flare);
+  color: #fff;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.7rem 0.9rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

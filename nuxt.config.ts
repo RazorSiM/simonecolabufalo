@@ -1,40 +1,22 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: ["@nuxt/content", "@nuxtjs/robots", "@vueuse/nuxt", "@unocss/nuxt"],
-  css: ["@unocss/reset/tailwind.css"],
+  css: ["@unocss/reset/tailwind.css", "~/assets/css/main.css"],
 
   app: {
     head: {
       htmlAttrs: {
         lang: "en",
       },
-      title: "Simone Colabufalo - Web Designer & Developer",
+      title: "Simone Colabufalo - Engineering Team Lead",
       meta: [
         {
           name: "description",
           content:
-            "Simone Colabufalo - Web Designer & Developer. I build things on the web, like this website",
+            "Engineering team lead focused on software architecture, product delivery, and building effective teams.",
         },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@Razor_SiM" },
-        { name: "twitter:creator", content: "@Razor_SiM" },
-        { name: "twitter:title", content: "Simone Colabufalo" },
-        {
-          name: "twitter:description",
-          content:
-            "Simone Colabufalo - Web Designer & Developer. I build things on the web, like this website",
-        },
-        { name: "twitter:url", content: "https://simonecolabufalo.com" },
-        { name: "og:title", content: "Simone Colabufalo" },
-        {
-          name: "og:description",
-          content:
-            "Simone Colabufalo - Web Designer & Developer. I build things on the web, like this website",
-        },
-        { name: "og:url", content: "https://simonecolabufalo.com" },
-        { name: "og:site_name", content: "Simone Colabufalo" },
-        { name: "og:type", content: "website" },
-        { name: "og:locale", content: "en_US" },
+        { property: "og:site_name", content: "Simone Colabufalo" },
+        { property: "og:locale", content: "en_US" },
       ],
     },
   },
@@ -54,9 +36,9 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml']
+      routes: ["/sitemap.xml"]
     }
   },
 
   compatibilityDate: "2024-07-21"
-});
+})

@@ -1,18 +1,22 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 export interface Props {
   name: string
   url: string
   icon: string
 }
-defineProps<Props>()
+
+const props = defineProps<Props>()
+const isExternal = props.url.startsWith('http')
 </script>
 
 <template>
-  <a :href="url" target="_blank" class="text-zinc-700 dark:text-zinc-400 hover:text-lime-600 hover:dark:text-lime-500">
-    <div
-      :title="name"
-      :class="icon"
-      class="h-8 w-8 transition  "
-    />
+  <a
+    :href="url"
+    :target="isExternal ? '_blank' : undefined"
+    :rel="isExternal ? 'noopener noreferrer' : undefined"
+    class="inline-flex min-h-[2.8rem] items-center gap-[0.55rem] border border-[var(--social-border)] px-[0.8rem] py-[0.65rem] text-[0.76rem] text-[var(--social-color)] font-600 no-underline transition duration-180 hover:translate-y-[-2px] hover:bg-[var(--social-hover-background)] hover:text-[var(--social-hover-color)]"
+  >
+    <span :class="icon" class="h-4 w-4" aria-hidden="true" />
+    <span>{{ name }}</span>
   </a>
 </template>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Simone Colabufalo - Engineering Team Lead</title>
+  <desc id="description">Hands-on software architecture and product delivery.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#101d32" stroke-opacity=".08" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#eaf0f3" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <rect x="0" y="0" width="16" height="630" fill="#265cdd" />
+  <rect x="80" y="80" width="64" height="8" fill="#f15a38" />
+  <text x="80" y="145" fill="#69798b" font-family="monospace" font-size="20" letter-spacing="2">SIMONE COLABUFALO / SOFTWARE ENGINEERING</text>
+  <text x="74" y="312" fill="#101d32" font-family="Arial Narrow, sans-serif" font-size="112" font-weight="700" letter-spacing="-5">ENGINEERING</text>
+  <text x="74" y="420" fill="#265cdd" font-family="Arial Narrow, sans-serif" font-size="112" font-weight="700" letter-spacing="-5">TEAM LEAD.</text>
+  <text x="80" y="492" fill="#3f5065" font-family="Arial, sans-serif" font-size="30">Hands-on software architecture and product delivery.</text>
+  <path d="M797 124C1039 124 1080 208 1050 309C1022 403 913 442 775 496" fill="none" stroke="#265cdd" stroke-width="4" stroke-dasharray="12 14" />
+  <circle cx="797" cy="124" r="15" fill="#f15a38" stroke="#eaf0f3" stroke-width="8" />
+  <circle cx="1050" cy="309" r="15" fill="#f15a38" stroke="#eaf0f3" stroke-width="8" />
+  <circle cx="775" cy="496" r="15" fill="#f15a38" stroke="#eaf0f3" stroke-width="8" />
+  <text x="820" y="116" fill="#101d32" font-family="Arial, sans-serif" font-size="22" font-weight="700">LEAD</text>
+  <text x="1010" y="278" fill="#101d32" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="end">ARCHITECT</text>
+  <text x="795" y="542" fill="#101d32" font-family="Arial, sans-serif" font-size="22" font-weight="700">DELIVER</text>
+</svg>
