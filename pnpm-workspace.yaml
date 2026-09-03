@@ -1,0 +1,15 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - '@vizejs/native-darwin-arm64@0.390.0'
+  - '@vizejs/native-darwin-x64@0.390.0'
+  - '@vizejs/native-linux-arm64-gnu@0.390.0'
+  - '@vizejs/native-linux-arm64-musl@0.390.0'
+  - '@vizejs/native-linux-x64-gnu@0.390.0'
+  - '@vizejs/native-linux-x64-musl@0.390.0'
+  - '@vizejs/native-win32-arm64-msvc@0.390.0'
+  - '@vizejs/native-win32-x64-msvc@0.390.0'
+  - '@vizejs/native@0.390.0'
+  - vize@0.390.0

@@ -1,42 +1,45 @@
-# One of my personal websites
+# simonecolabufalo.com
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+Personal website of Simone Colabufalo. It is built with Nuxt 4, typed Nuxt Content collections, and UnoCSS using the Wind4 preset.
 
-## Setup
+## Requirements
 
-Make sure to install the dependencies:
+- Node.js 26
+- pnpm 12
 
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
+The repository includes a reproducible devenv environment:
 
 ```bash
-npm run dev
+devenv shell
+pnpm install --frozen-lockfile
 ```
 
-## Production
-
-Build the application for production:
+Without Nix, install Node.js 26 and pnpm 12, then run the same pnpm command. Node 26 no longer bundles Corepack; pnpm's supported installer is:
 
 ```bash
-npm run build
+npx get-pnpm next-12
 ```
 
-Locally preview production build:
+## Commands
 
-```bash
-npm run preview
-```
+| Command           | Purpose                                          |
+| ----------------- | ------------------------------------------------ |
+| `pnpm dev`        | Start the Nuxt development server                |
+| `pnpm generate`   | Generate the static site in `.output/public`     |
+| `pnpm preview`    | Preview the latest Nuxt build                    |
+| `pnpm typecheck`  | Check Nuxt, Vue, and Content collection types    |
+| `pnpm lint`       | Run Oxlint and Vize                              |
+| `pnpm fmt:check`  | Check formatting with Oxfmt                      |
+| `pnpm cf:preview` | Generate and upload a Cloudflare preview version |
+| `pnpm cf:deploy`  | Generate and deploy to Cloudflare Workers        |
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+## Deployment
+
+The generated site is deployed as an assets-only Cloudflare Worker. Nuxt Content queries run at build time, so no D1 database or runtime Worker code is required.
+
+GitHub Actions checks every pull request, uploads same-repository pull requests to a version preview URL, and deploys pushes to `main`. Configure these repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+The Worker owns both `simonecolabufalo.com` and `www.simonecolabufalo.com` as custom domains.
