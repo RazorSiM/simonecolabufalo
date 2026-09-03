@@ -1,44 +1,44 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/content", "@nuxtjs/robots", "@vueuse/nuxt", "@unocss/nuxt"],
-  css: ["@unocss/reset/tailwind.css", "~/assets/css/main.css"],
+  modules: ['@nuxt/content', '@nuxtjs/robots', '@nuxtjs/sitemap', '@vueuse/nuxt', '@unocss/nuxt'],
+  css: ['~/assets/css/main.css'],
+
+  site: {
+    url: 'https://simonecolabufalo.com',
+    name: 'Simone Colabufalo',
+  },
 
   app: {
     head: {
       htmlAttrs: {
-        lang: "en",
+        lang: 'en',
       },
-      title: "Simone Colabufalo - Engineering Team Lead",
+      title: 'Simone Colabufalo - Engineering Team Lead',
       meta: [
         {
-          name: "description",
+          name: 'description',
           content:
-            "Engineering team lead focused on software architecture, product delivery, and building effective teams.",
+            'Engineering team lead focused on software architecture, product delivery, and building effective teams.',
         },
-        { property: "og:site_name", content: "Simone Colabufalo" },
-        { property: "og:locale", content: "en_US" },
+        { property: 'og:site_name', content: 'Simone Colabufalo' },
+        { property: 'og:locale', content: 'en_US' },
       ],
     },
   },
 
   content: {
-    markdown: {
-      tags: {
-        h1: "h1",
-        h2: "h2",
-        h3: "h3",
-        h4: "h4",
-        h5: "h5",
-        h6: "h6",
-      },
+    experimental: {
+      sqliteConnector: 'native',
     },
   },
 
   nitro: {
+    preset: 'static',
     prerender: {
-      routes: ["/sitemap.xml"]
-    }
+      autoSubfolderIndex: false,
+      routes: ['/robots.txt', '/sitemap.xml'],
+    },
   },
 
-  compatibilityDate: "2024-07-21"
+  compatibilityDate: '2026-09-03',
 })

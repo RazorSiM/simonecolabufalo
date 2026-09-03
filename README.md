@@ -1,59 +1,45 @@
-# One of my personal websites
+# simonecolabufalo.com
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+Personal website of Simone Colabufalo. It is built with Nuxt 4, typed Nuxt Content collections, and UnoCSS using the Wind4 preset.
 
-## Setup
+## Requirements
 
-Enter the reproducible development environment:
+- Node.js 26
+- pnpm 12
+
+The repository includes a reproducible devenv environment:
 
 ```bash
 devenv shell
 pnpm install --frozen-lockfile
 ```
 
-Devenv provides Node.js 22 and uses Corepack to select the pnpm version pinned in
-`package.json`. It also provides `agent-browser` and Chromium for browser
-automation from OpenCode; no separate browser download is required.
+Without Nix, install Node.js 26 and pnpm 12, then run the same pnpm command. Node 26 no longer bundles Corepack; pnpm's supported installer is:
 
 ```bash
-agent-browser open http://localhost:3000
-agent-browser snapshot -i
-agent-browser close
+npx get-pnpm next-12
 ```
 
-Without Nix, install Node.js 22, enable Corepack, and install the dependencies:
+## Commands
 
-```bash
-corepack enable
-pnpm install --frozen-lockfile
-```
+| Command           | Purpose                                          |
+| ----------------- | ------------------------------------------------ |
+| `pnpm dev`        | Start the Nuxt development server                |
+| `pnpm generate`   | Generate the static site in `.output/public`     |
+| `pnpm preview`    | Preview the latest Nuxt build                    |
+| `pnpm typecheck`  | Check Nuxt, Vue, and Content collection types    |
+| `pnpm lint`       | Run Oxlint and Vize                              |
+| `pnpm fmt:check`  | Check formatting with Oxfmt                      |
+| `pnpm cf:preview` | Generate and upload a Cloudflare preview version |
+| `pnpm cf:deploy`  | Generate and deploy to Cloudflare Workers        |
 
-## Development Server
+## Deployment
 
-Start the development server on http://localhost:3000
+The generated site is deployed as an assets-only Cloudflare Worker. Nuxt Content queries run at build time, so no D1 database or runtime Worker code is required.
 
-```bash
-pnpm dev
-```
+GitHub Actions checks every pull request, uploads same-repository pull requests to a version preview URL, and deploys pushes to `main`. Configure these repository secrets:
 
-Alternatively, start the configured devenv process directly:
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
 
-```bash
-devenv up
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-pnpm build
-```
-
-Locally preview production build:
-
-```bash
-pnpm preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+The Worker owns both `simonecolabufalo.com` and `www.simonecolabufalo.com` as custom domains.

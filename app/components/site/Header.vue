@@ -16,10 +16,22 @@ const navigation = [
 </script>
 
 <template>
-  <header class="sticky top-0 z-20 border-b border-[var(--color-border)] bg-[var(--header-background)] backdrop-blur-[16px]">
-    <div class="page-section grid min-h-[4.75rem] grid-cols-[1fr_auto] items-center gap-8 md:min-h-[5.5rem] md:grid-cols-[auto_1fr_auto]">
-      <a class="inline-flex items-center gap-3 text-[0.84rem] text-[var(--color-ink)] font-600 no-underline" href="#top" aria-label="Simone Colabufalo, back to top">
-        <span class="grid h-[2.35rem] w-[2.35rem] place-items-center bg-[var(--color-ink)] font-display text-[1.25rem] text-[var(--color-paper)] font-600 tracking-[-0.04em]" aria-hidden="true">SC</span>
+  <header
+    class="sticky top-0 z-20 border-b border-[var(--color-border)] bg-[var(--header-background)] backdrop-blur-[16px]"
+  >
+    <div
+      class="page-section grid min-h-[4.75rem] grid-cols-[1fr_auto] items-center gap-8 md:min-h-[5.5rem] md:grid-cols-[auto_1fr_auto]"
+    >
+      <a
+        class="font-600 inline-flex items-center gap-3 text-[0.84rem] text-[var(--color-ink)] no-underline"
+        href="#top"
+        aria-label="Simone Colabufalo, back to top"
+      >
+        <span
+          class="font-display font-600 grid h-[2.35rem] w-[2.35rem] place-items-center bg-[var(--color-ink)] text-[1.25rem] tracking-[-0.04em] text-[var(--color-paper)]"
+          aria-hidden="true"
+          >SC</span
+        >
         <span class="hidden sm:inline">Simone Colabufalo</span>
       </a>
 
@@ -28,7 +40,11 @@ const navigation = [
       </nav>
 
       <div class="flex items-center gap-[0.8rem]">
-        <a class="hidden border-b border-[var(--color-border-strong)] px-0 py-[0.45rem] text-[0.76rem] text-[var(--color-ink)] font-600 no-underline sm:block" href="#contact">Contact</a>
+        <a
+          class="font-600 hidden border-b border-[var(--color-border-strong)] px-0 py-[0.45rem] text-[0.76rem] text-[var(--color-ink)] no-underline sm:block"
+          href="#contact"
+          >Contact</a
+        >
         <button
           class="grid h-[2.65rem] w-[2.65rem] cursor-pointer place-items-center border border-[var(--color-border-strong)] bg-transparent text-[var(--color-ink)] transition duration-180 hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
           type="button"

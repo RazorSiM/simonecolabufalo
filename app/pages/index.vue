@@ -1,25 +1,22 @@
 <script setup lang="ts">
-import type { ProfileContent } from '~/types/profile'
+const { data } = await useAsyncData('profile', () => queryCollection('profile').path('/').first())
+const profile = data.value
 
-const { data: document } = await useAsyncData('profile', () => queryContent('/').findOne())
-
-if (!document.value) {
+if (!profile) {
   throw createError({ statusCode: 404, statusMessage: 'Profile not found' })
 }
 
-const profile = computed(() => document.value as unknown as ProfileContent)
-
 useSeoMeta({
-  title: () => profile.value.title,
-  description: () => profile.value.description,
-  ogTitle: () => profile.value.title,
-  ogDescription: () => profile.value.description,
+  title: profile.title,
+  description: profile.description,
+  ogTitle: profile.title,
+  ogDescription: profile.description,
   ogType: 'profile',
   ogUrl: 'https://simonecolabufalo.com',
   ogImage: 'https://simonecolabufalo.com/og-image.png',
   twitterCard: 'summary_large_image',
-  twitterTitle: () => profile.value.title,
-  twitterDescription: () => profile.value.description,
+  twitterTitle: profile.title,
+  twitterDescription: profile.description,
   twitterImage: 'https://simonecolabufalo.com/og-image.png',
 })
 
@@ -35,10 +32,7 @@ useHead({
         url: 'https://simonecolabufalo.com',
         jobTitle: 'Engineering Team Lead',
         email: 'mailto:me@simonecolabufalo.com',
-        sameAs: [
-          'https://www.linkedin.com/in/simone-colabufalo/',
-          'https://github.com/RazorSiM',
-        ],
+        sameAs: ['https://www.linkedin.com/in/simone-colabufalo/', 'https://github.com/RazorSiM'],
       }),
     },
   ],

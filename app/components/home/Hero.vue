@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HeroContent } from '~/types/profile'
+import type { HeroContent } from '#shared/schemas/profile'
 
 defineProps<{
   content: HeroContent
@@ -7,26 +7,53 @@ defineProps<{
 </script>
 
 <template>
-  <section id="top" class="page-section grid min-h-0 grid-cols-1 items-center gap-14 py-[clamp(4.5rem,9vw,8rem)] lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[minmax(0,1.03fr)_minmax(22rem,0.97fr)] lg:gap-[clamp(3rem,8vw,7rem)]" aria-labelledby="hero-title">
+  <section
+    id="top"
+    class="page-section grid min-h-0 grid-cols-1 items-center gap-14 py-[clamp(4.5rem,9vw,8rem)] lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[minmax(0,1.03fr)_minmax(22rem,0.97fr)] lg:gap-[clamp(3rem,8vw,7rem)]"
+    aria-labelledby="hero-title"
+  >
     <div class="relative z-1 max-w-[48rem] lg:max-w-none">
-      <p class="eyebrow m-0 mb-6 flex items-center gap-3 font-mono text-[0.75rem] text-[var(--color-muted)] font-500 tracking-[0.09em] uppercase">{{ content.eyebrow }}</p>
-      <h1 id="hero-title" class="m-0 font-display text-[clamp(3.7rem,20vw,5rem)] text-[var(--color-ink)] font-600 leading-[0.76] tracking-[-0.045em] uppercase sm:text-[clamp(4.5rem,9.2vw,8.6rem)]">
+      <p
+        class="eyebrow font-500 m-0 mb-6 flex items-center gap-3 font-mono text-[0.75rem] tracking-[0.09em] text-[var(--color-muted)] uppercase"
+      >
+        {{ content.eyebrow }}
+      </p>
+      <h1
+        id="hero-title"
+        class="font-display font-600 m-0 text-[clamp(3.7rem,20vw,5rem)] leading-[0.76] tracking-[-0.045em] text-[var(--color-ink)] uppercase sm:text-[clamp(4.5rem,9.2vw,8.6rem)]"
+      >
         <span class="block">Engineering</span>
         <span class="block text-[var(--color-signal)]">Team Lead.</span>
       </h1>
-      <p class="mt-9 mb-0 max-w-[37rem] text-[clamp(1.35rem,2.3vw,2rem)] text-[var(--color-ink)] font-500 leading-[1.2] tracking-[-0.025em]">{{ content.subtitle }}</p>
-      <p class="mt-6 mb-0 max-w-[39rem] text-[clamp(1rem,1.4vw,1.15rem)] text-[var(--color-copy)] leading-[1.75]">{{ content.introduction }}</p>
+      <p
+        class="font-500 mt-9 mb-0 max-w-[37rem] text-[clamp(1.35rem,2.3vw,2rem)] leading-[1.2] tracking-[-0.025em] text-[var(--color-ink)]"
+      >
+        {{ content.subtitle }}
+      </p>
+      <p class="mt-6 mb-0 max-w-[39rem] text-[clamp(1rem,1.4vw,1.15rem)] leading-[1.75] text-[var(--color-copy)]">
+        {{ content.introduction }}
+      </p>
 
       <div class="mt-9 flex flex-wrap gap-3">
-        <a class="action-button w-full bg-[var(--color-ink)] text-[var(--color-paper)] hover:bg-[var(--color-signal)] sm:w-auto" href="mailto:me@simonecolabufalo.com">
+        <a
+          class="action-button w-full bg-[var(--color-ink)] text-[var(--color-paper)] hover:bg-[var(--color-signal)] sm:w-auto"
+          href="mailto:me@simonecolabufalo.com"
+        >
           Start a conversation
           <span class="i-carbon-arrow-up-right" aria-hidden="true" />
         </a>
-        <a class="action-button w-full border-[var(--color-border-strong)] text-[var(--color-ink)] hover:border-[var(--color-ink)] sm:w-auto" href="#career">View career</a>
+        <a
+          class="action-button w-full border-[var(--color-border-strong)] text-[var(--color-ink)] hover:border-[var(--color-ink)] sm:w-auto"
+          href="#career"
+          >View career</a
+        >
       </div>
     </div>
 
-    <div class="system-card w-full max-w-[39rem] justify-self-end lg:max-w-none" aria-label="My operating model: lead, architect, deliver">
+    <div
+      class="system-card w-full max-w-[39rem] justify-self-end lg:max-w-none"
+      aria-label="My operating model: lead, architect, deliver"
+    >
       <div class="system-card-header font-mono">
         <span>Operating model</span>
         <span class="system-status"><i aria-hidden="true" /> Active</span>
@@ -76,7 +103,9 @@ defineProps<{
   overflow: hidden;
   border: 1px solid var(--color-border-strong);
   background-color: var(--color-panel);
-  background-image: linear-gradient(var(--color-grid) 1px, transparent 1px), linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
   background-size: 2rem 2rem;
   box-shadow: 1.2rem 1.2rem 0 var(--color-shadow);
 }

@@ -1,25 +1,44 @@
 {
+  "name": "simonecolabufalo",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
-  },
-  "devDependencies": {
-    "@iconify/json": "^2.2.229",
-    "@nuxt/content": "^2.13.2",
-    "@nuxtjs/robots": "^4.0.2",
-    "@types/node": "^20.14.11",
-    "@unocss/nuxt": "^0.61.5",
-    "@vueuse/core": "^10.11.0",
-    "@vueuse/nuxt": "^10.11.0",
-    "nuxt": "^3.12.4",
-    "sitemap": "^8.0.0",
-    "unocss-preset-scrollbar": "^0.3.1"
+    "preview": "nuxt preview",
+    "cf:deploy": "nuxt generate && wrangler deploy",
+    "cf:preview": "nuxt generate && wrangler versions upload",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "lint": "oxlint && vize lint app",
+    "lint:fix": "oxlint --fix && vize lint --fix app",
+    "lint:strict": "oxlint --max-warnings 0 && vize lint --max-warnings 0 app",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
-    "@unocss/reset": "^0.61.5"
+    "@nuxt/content": "^3.16.0",
+    "@nuxtjs/robots": "^6.2.0",
+    "@nuxtjs/sitemap": "^8.5.0",
+    "@vueuse/nuxt": "^14.4.0",
+    "nuxt": "^4.5.2",
+    "zod": "^4.5.4"
   },
-  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.2.26",
+    "@types/node": "^26.4.1",
+    "@unocss/nuxt": "^66.9.2",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.81.0",
+    "typescript": "^6.0.3",
+    "unocss": "^66.9.2",
+    "vize": "^0.390.0",
+    "vue-tsc": "^3.3.11",
+    "wrangler": "^4.128.0"
+  },
+  "engines": {
+    "node": ">=26.0.0 <27.0.0"
+  },
+  "packageManager": "pnpm@12.3.1"
 }

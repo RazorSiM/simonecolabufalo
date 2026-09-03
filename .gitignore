@@ -4,8 +4,14 @@ node_modules
 .nitro
 .cache
 .output
+.data
 .env
 dist
+
+# Wrangler
+.wrangler
+.dev.vars*
+!.dev.vars.example
 
 # Devenv
 .devenv*
